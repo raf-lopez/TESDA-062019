@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06 15, 19, 11:12:18 AM
+    Author     : Student
+*/
+
+.box {
+                height: 100px;
+                width: 100px;
+                float: left;
+            }
+            
+            .redbox {
+                background-color: red;
+            }
+            .bluebox {
+                background-color: blue;
+            }
+            .greenbox {
+                background-color: green;
+            }

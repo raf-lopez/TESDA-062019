@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function foo() {
+                var canvas = document.getElementById("abc");
+                console.log(canvas);
+                var context = canvas.getContext("2d");
+                context.beginPath();
+                context.arc(100, 100, 50, 0, 2 * Math.PI, false);
+                context.fillStyle = "black";
+                context.fill();
+                context.lineWidth = 1;
+                context.strokeStyle = "black";
+                context.stroke();
+            }
+        </script>
+    </head>
+    <body onload="foo()">
+        <canvas id="abc" width="300" height="300" style="background-color: red"></canvas>
+    </body>
+</html>

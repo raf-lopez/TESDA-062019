@@ -1,0 +1,12 @@
+h1 {
+    font-family: Impact;
+    text-shadow: 5px 5px 5px gray;
+    font-size: 4em;
+    text-align: center;
+}
+a:hover {
+    background-color: yellow;  
+}
+body {
+    font-family: "Tahoma", sans-serif;
+}

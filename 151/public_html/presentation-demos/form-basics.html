@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="script.php">
+            <span>Name:</span><input type="text" name="name-value"/><br/>
+            <span>Password:</span><input type="password" name="password-value"/>
+            <span>Gender</span><br/>
+            <fieldset>
+                <legend>Gender</legend>
+                <input type="radio" name="gender" checked/><span>Male</span>
+                <input type="radio" name="gender"/><span>Female</span>
+            </fieldset>
+            <input type="checkbox" name="favorite-fruits"/><span>Apple</span><br/>
+            <span>Date</span><input type="date" name="date-value"/>
+            <input list="my-datalist" name="car-brands-value" />
+            <datalist id="my-datalist">
+                <option value="Ford"></option>
+                <option value="Volkswagen"></option>
+                <option value="Honda"></option>
+                <option value="Toyota"></option>
+            </datalist>
+            <input type="submit" value="Go" />
+        </form>
+    </body>
+</html>

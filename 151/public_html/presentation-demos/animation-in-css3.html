@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <style>
+            .box {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                background: linear-gradient(to bottom right, red,green,purple);
+                height: 100px;
+                width: 100px;
+                animation-name: mykeyframes;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            @keyframes mykeyframes {
+                0% {
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    background: blue;
+                    height: 400px;
+                    width: 100px;
+                }
+                50% {
+                    position: absolute;
+                    left: 100px;
+                    top: 0px;
+                    background: blue;
+                    height: 100px;
+                    width: 100px;
+                    transform: rotate(45deg), skew(0deg, 0deg), translate(0px, 90px);
+                }
+                100% {
+                    position: absolute;
+                    left: 400px;
+                    background: red;
+                    top: 0px;
+                    height: 100px;
+                    width: 100px;
+                    //transform: rotate(45deg) skew(20deg, 40deg) translate(100px,200px);
+                }
+            }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="box"></div>
+    </body>
+</html>
