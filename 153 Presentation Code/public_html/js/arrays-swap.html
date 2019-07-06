@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            document.writeln("Initial: " + arr)
+            var midpos = arr.length / 2
+            var firstHalf = []
+            for (var i = 0; i < midpos; i++) {
+                firstHalf[firstHalf.length] = arr[i]
+            }
+            var secondHalf = []
+            for (var i = midpos; i < arr.length; i++) {
+                secondHalf[secondHalf.length] = arr[i]
+            }
+
+            var swp = secondHalf.concat(firstHalf)
+            document.writeln("<br/>Half-swapped: " + swp)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
