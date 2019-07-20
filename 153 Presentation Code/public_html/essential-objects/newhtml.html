@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<script>
+			var now = new Date();
+			now.setFullYear(2019, 11, 25);
+			// document.write("Christmas of this year is on " + now.getDay());
+			var num = 1234567.897;
+			var formatter = new Intl.NumberFormat("it-IT");
+			var result = formatter.format(num);
+			document.write(result);
+		</script>
+	</body>
+</html>
