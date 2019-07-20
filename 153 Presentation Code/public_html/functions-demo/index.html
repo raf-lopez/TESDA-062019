@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="myfunctions.js">
+		</script>
+		<script>
+			function changeMessage(){
+				document.getElementById("message").innerHTML = "foobar"
+			}
+			function clearTf(){
+				document.getElementById("tf").value = ""
+			}
+			function update(){
+				var nc = document.getElementById("numChars")
+				var tf = document.getElementById("tf")
+				nc.innerHTML = tf.value.length
+			}
+			</script>
+		<style>
+			div#target {
+			    background-color: red;
+			    height: 200px;
+			    width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="target" onmouseover="changeMessage()">&nbsp;</div>
+		<h1><span id="message">Hello!</span></h2>
+		<input type="text" id="tf" onfocus="clearTf()" onblur="update()"/>
+		<span id="numChars"></span>
+	</body>
+</html>

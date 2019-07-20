@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>
+			function Contact() {
+				this.firstName = "";
+				this.lastName = "";
+				this.phoneNumber = "";
+				this.email = "<none>";
+
+				this.printFullName = function () {
+					document.write("<h1>" + this.firstName + " " + this.lastName + "</h1>");
+				}
+			}
+		</script>
+
+	</head>
+	<body>
+		<script>
+			var fruits = ["apple", "grapes", "melon"];
+			var john = new Contact();
+			john.firstName = "John";
+			john.lastName = "Cruz";
+			john.phoneNumber = "555-33-22";
+			john.email = "john.cruz@gmail.com";
+
+			var mary = new Contact();
+			mary.firstName = "Mary";
+			mary.lastName = "Santos";
+			mary.phoneNumber = "213-22-44";
+			mary.email = "mary@hotmail.com";
+
+			mary.printFullName();
+			john.printFullName();
+			document.write("<h1>" + mary.email + "</h1>");
+			var propertyName = "email";
+			document.write("<h1>" + mary[propertyName] + "</h1>");
+
+			for (var i = 0; i < fruits.length; i++) {
+				document.write(fruits[i] + " ");
+			}
+			document.write("<br/>")
+
+			for (index in fruits) {
+				document.write(fruits[index] + " ");
+			}
+
+			function compareContacts(contact1, contact2) {
+				if (contact1.firstName === contact2.firstName) return 0;
+				if (contact1.firstName < contact2.firstName) return -1;
+				if (contact1.firstName > contact2.firstName) return 1;
+			}
+
+			var mon = new Contact();
+			mon.firstName = "Mon";
+			var contacts = [mon, john, mary];
+			contacts.sort(compareContacts);
+			// document.write("<h1>"+ contacts[0].firstName +"</h1>");
+
+			for (var i = 0; i < contacts.length; i++) {
+			   document.write("<h1>" + contacts[i].firstName + "</h1>");
+			}
+
+		</script>
+
+	</body>
+</html>

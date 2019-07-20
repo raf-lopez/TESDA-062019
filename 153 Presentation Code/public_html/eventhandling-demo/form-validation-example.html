@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>
+			function validator(){
+				// clear error placeholders
+				document.getElementById("errorMsg1").innerHTML = "";
+				document.getElementById("errorMsg2").innerHTML = "";
+
+				var usernameE = document.getElementById("username");
+				var passwordE = document.getElementById("password");
+				if (usernameE.value.length == 0){
+					document.getElementById("errorMsg1").innerHTML = "Please enter a username.";
+				}
+				if (passwordE.value.length == 0){
+					document.getElementById("errorMsg2").innerHTML = "Please enter a password.";
+				}
+
+				// when both username and password fields are blank, all
+				// messages should be displayed
+				if (passwordE.value.length == 0 || usernameE.value.length == 0 ){
+					return false;
+				}
+
+			}
+
+			function detectPasswordStrength(){
+				var passwordE = document.getElementById("password");
+				if (passwordE.value.length < 3) {
+						document.getElementById("errorMsg2").innerHTML = "Password is weak";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form onsubmit="return validator()">
+			Username: <input id="username" type="text"/><span id="errorMsg1" style="color: red"></span><br/>
+			Password: <input id="password" type="text" onblur="detectPasswordStrength()"/>&nbsp;<span id="errorMsg2" style="color: red" ></span><br/>
+			<input type="submit" value="Login"/>
+			
+		</form>
+	</body>
+</html>
