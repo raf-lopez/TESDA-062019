@@ -22,8 +22,8 @@
   $stmt->execute();
   $stmt->store_result();
 
-  $row = [];
-  $acc = [];
+  $row = array();
+  $acc = array();
   $rowCount = $stmt->num_rows;
   if ($rowCount > 0) {
     while($stmt->fetch()) {

@@ -1,3 +1,146 @@
-<?php
-  echo("Configuration success.");
-?>
+<html>
+  <head>
+    <script src="jquery-dist/js/jquery.min.js"></script>
+    <script src="bootstrap-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="grocerific.css" />
+    <script src="grocerific.js"></script>
+    <style>
+/* .form-control:focus { */
+/*   border-color: #FF0000; */
+/*   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6); */
+/* } */
+
+</style>
+  </head>
+  <body>
+
+    <!-- Main -->
+    <div class="container container-fluid">
+      <nav class="navbar navbar-default" role="navigation" >
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand "><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Grocerific Online</a>
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="glyphicon glyphicon-align-justify"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">About </a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <h3 class="text-primary">Inventory Management
+            <button class="btn btn-default" style="margin-right: 10px" onclick="newClicked()" data-toggle="modal" data-target="#b_modal_new">&nbsp;<span class="glyphicon glyphicon-plus"></span>&nbsp;Add Product</button>
+</h3>
+      <table id="myTable" class="table table-hover" border="1">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Aisle</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Update Modal -->
+    <div class="modal fade" id="b_modal_update">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Edit Product</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label class="control-label">Id</label>
+              <input type="text" id="input-id" disabled class="form-control input-xs" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Description</label>
+              <input type="text" id="input-description" class="form-control input-xs" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Size</label>
+              <input type="text" id="input-size" class="form-control input-xs" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Price</label>
+              <input type="text" id="input-price" class="form-control input-xs" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Aisle</label>
+              <select id="aisles-list" class="form-control">
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <span id="lbl-update-notification" style="margin-right:10px; color:gray"></span>
+            <button class="btn btn-primary" id="btn-save" onclick="performEdit()">Save</button>
+            <button class="btn btn-default" data-dismiss="modal" id="btn-close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Modal -->
+    <div class="modal fade" id="b_modal_new">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>New Product</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label class="control-label">Description</label>
+              <input type="text" id="new-input-description" class="form-control input-xs" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Size</label>
+              <input type="text" id="new-input-size" class="form-control input-xs" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Price</label>
+              <input type="text" id="new-input-price" class="form-control input-xs" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Aisle</label>
+              <select id="new-aisles-list" class="form-control">
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <span id="lbl-new-notification" style="margin-right:10px; color:gray"></span>
+            <button class="btn btn-primary" id="btn-save" onclick="performCreate()">Create</button>
+            <button class="btn btn-default" data-dismiss="modal" id="btn-close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="b_modal_delete">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <span>Really delete this product with id <span id="delete-id"></span>?</span>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss="modal" id="btn-save" onclick="performDelete()">
+              <span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</button>
+            <button class="btn btn-default" data-dismiss="modal" id="btn-close">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

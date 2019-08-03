@@ -1,6 +1,6 @@
 <?php
 /**
- * Returns all grocerific products as JSON
+ * Returns all grocerific aisles as JSON
  *
  * @package all.php
  * @author Raf <raffylopez@gmail.com>
@@ -10,7 +10,7 @@
  */
 
   require("includes.inc");
-  $query = "SELECT p.id, p.description, size, price, aisle_id, a.description AS aisle_description from grocerific.products p JOIN grocerific.aisles a ON p.aisle_id=a.id ORDER BY p.id";
+  $query = "SELECT id, description from grocerific.aisles";
   if ($conn->connect_error) {
     die(DB_CONNECT_ERROR_NOTIF);
   }
